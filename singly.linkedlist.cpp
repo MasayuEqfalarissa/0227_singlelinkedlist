@@ -88,3 +88,23 @@ public:
         delete current;
         return true;
     }
+
+    void traverse()
+    {
+        if (listempty())
+        {
+            cout<< "\nlist kosongan\n";
+        }
+        else
+        {
+            cout << "\ndata di dalam list adalah:\n";
+            node *currentnode = start;
+            while (currentnode != NULL)
+            {
+                cout << currentnode -> nomhs << endl;
+                currentnode = currentnode -> next;
+            }
+            cout << endl;
+        }
+    }
+};
