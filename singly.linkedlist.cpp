@@ -28,3 +28,17 @@ public:
         node *nodebaru = new node;
         nodebaru -> nomhs = nim;
 
+        if (start == NULL || nim <= start -> nomhs)
+        {
+            if ((start != NULL) && (nim == start -> nomhs))
+            {
+                cout<< "\nduplikat nomhs tidak diijinkan\n";
+                return;
+            }
+            nodebaru -> next = start;
+            start = nodebaru;
+            return;
+        }
+        node *previous = start;
+        node *current = start;
+
