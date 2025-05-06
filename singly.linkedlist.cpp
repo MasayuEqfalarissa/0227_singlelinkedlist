@@ -42,3 +42,18 @@ public:
         node *previous = start;
         node *current = start;
 
+        while ((current != NULL ) && (nim >= current -> nomhs))
+        {
+            if (nim == current -> nomhs)
+            {
+                cout << "\nduplikat nomhs tidak diijinkan\n";
+                return;
+            }
+            previous = current;
+            current = current -> next;
+        }
+
+        nodebaru -> next = current;
+        previous -> next = nodebaru;
+    }
+
