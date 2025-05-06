@@ -113,6 +113,7 @@ int main ()
 {
     linkedlist mhs;
     int nim;
+    char ch;
     while (1)
     {
         cout << endl
@@ -136,7 +137,7 @@ int main ()
         
         break;
 
-        case '2':
+        case '2':{
             if (mhs.listempty())
             {
                 cout << endl
@@ -152,14 +153,16 @@ int main ()
                 else 
                 cout <<  endl   
                     << "data dengan nomor mahasiswa" << nim << "berhasil dihapus " << endl;
+                    break;
         }
-        break;
+        
         case '3':
         {
             mhs.traverse();
+            break;
         }
-        break;
-        case '4';
+        
+        case '4':
         {
             if (mhs.listempty() == true)
             {
@@ -170,7 +173,7 @@ int main ()
             cout << endl
                 << "masukkan no mahasiswa yang dicari : ";
             cin >> nim;
-            if (mhs search(nim, &previous, &current)== false)
+            if (mhs.search(nim, &previous, &current)== false)
                 cout << endl
                     << "data tidak ditemukan " << endl;
                 else
@@ -180,8 +183,9 @@ int main ()
                     cout << "\nno mahasiswa : " << current->nomhs << endl;
                     cout << "\n";
                 }
+                break;
         }
-        break;
+       
         case '5':
         {
             exit(0);
@@ -193,4 +197,5 @@ int main ()
         }
         break;
     }
+}
 }
