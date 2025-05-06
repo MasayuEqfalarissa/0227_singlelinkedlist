@@ -19,3 +19,12 @@ public:
         start = NULL;
     }
 
+    void addnode()
+    {
+        int nim;
+        cout << "\nmasukkan nomor mahasiswa: ";
+        cin >> nim;
+
+        node *nodebaru = new node;
+        nodebaru -> nomhs = nim;
+
