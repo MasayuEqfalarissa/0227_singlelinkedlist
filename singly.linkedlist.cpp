@@ -108,3 +108,89 @@ public:
         }
     }
 };
+
+int main ()
+{
+    linkedlist mhs;
+    int nim;
+    while (1)
+    {
+        cout << endl
+            << "menu";
+        cout << endl
+             << "1. menambah data kedalam list" << endl;
+        cout << "2. menghapus data dari dalam list" << endl;
+        cout << "3. menampilkan semua data dari dalam list" << endl;
+        cout << "4. mencari data dalam list" << endl;
+        cout << "5. keluar" << endl;
+        cout << endl
+            << "masukkan pilihan (1-5): ";
+
+        cin >> ch;
+        switch (ch)
+        {
+            case '1' :
+        {
+            mhs.addnode();
+        }
+        
+        break;
+
+        case '2':
+            if (mhs.listempty())
+            {
+                cout << endl
+                    << "list kosong" << endl;
+                    break;
+            }
+            cout << endl    
+                << "\nmasukkan no mahasiswa yang akan di hapus : ";
+            cin >> nim;
+            if (mhs.delnode(nim) == false)
+                cout << endl
+                    << "data tidak ditemukan" << endl;
+                else 
+                cout <<  endl   
+                    << "data dengan nomor mahasiswa" << nim << "berhasil dihapus " << endl;
+        }
+        break;
+        case '3':
+        {
+            mhs.traverse();
+        }
+        break;
+        case '4';
+        {
+            if (mhs.listempty() == true)
+            {
+                cout << "\nlist kososng\n";
+                break;
+            }
+            node *previous, *current;
+            cout << endl
+                << "masukkan no mahasiswa yang dicari : ";
+            cin >> nim;
+            if (mhs search(nim, &previous, &current)== false)
+                cout << endl
+                    << "data tidak ditemukan " << endl;
+                else
+                {
+                    cout << endl    
+                        << "data ditemukan" << endl;
+                    cout << "\nno mahasiswa : " << current->nomhs << endl;
+                    cout << "\n";
+                }
+        }
+        break;
+        case '5':
+        {
+            exit(0);
+        }
+        break;
+        default:
+        {
+            cout << "pilihan salah !." << endl;
+        }
+        break;
+    }
+}
